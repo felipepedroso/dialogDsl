@@ -1,101 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        android:orientation="vertical"
+        tools:context=".MainActivity"
+        android:gravity="center">
 
     <TextView
             android:id="@+id/textViewLabelDialogResult"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/dialog_result"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="@dimen/twentyFourDp"/>
 
     <TextView
             android:id="@+id/textViewDialogResult"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="-"
-            android:layout_marginTop="@dimen/eightDp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textViewLabelDialogResult"/>
+            android:text="@string/empty"
+            android:layout_marginTop="@dimen/eightDp"/>
 
     <Button
             android:id="@+id/buttonAlertDialog"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/ButtonAlert"
             android:layout_marginTop="@dimen/sixteenDp"
-            app:layout_constraintTop_toBottomOf="@id/textViewDialogResult"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             android:text="@string/alert_dialog"/>
+
+    <Button
+            android:id="@+id/buttonAlertDialogWithTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/ButtonAlert"
+            android:text="@string/alert_dialog_with_title"/>
 
     <Button
             android:id="@+id/buttonAlertDialogWithPositiveButtonCallback"
             style="@style/ButtonAlert"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/buttonAlertDialog"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             android:text="@string/alert_dialog_with_positive_button_callback"/>
 
     <Button
             android:id="@+id/buttonAlertDialogWithPositiveAndNegativeButtonsCallbacks"
             style="@style/ButtonAlert"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/buttonAlertDialogWithPositiveButtonCallback"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             android:text="@string/alert_dialog_with_positive_and_negative_buttons_callbacks"/>
 
     <Button
             android:id="@+id/buttonAlertDialogWithDismissCallback"
             style="@style/ButtonAlert"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/buttonAlertDialogWithPositiveAndNegativeButtonsCallbacks"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             android:text="@string/alert_dialog_with_dismiss_callback"/>
 
     <Button
             android:id="@+id/buttonAlertDialogWithCancelCallback"
             style="@style/ButtonAlert"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/buttonAlertDialogWithDismissCallback"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             android:text="@string/alert_dialog_with_cancel_callback"/>
 
     <Button
             android:id="@+id/buttonAlertDialogWithCustomView"
             style="@style/ButtonAlert"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/buttonAlertDialogWithCancelCallback"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             android:text="@string/alert_dialog_with_custom_view"/>
 
     <Button
             android:id="@+id/buttonAlertDialogWithoutStringResources"
             style="@style/ButtonAlert"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/buttonAlertDialogWithCustomView"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             android:text="@string/alert_dialog_without_string_resources"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+            android:id="@+id/buttonNonCancelableAlertDialog"
+            style="@style/ButtonAlert"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/alert_dialog_non_cancelable_dialog"/>
+
+
+</LinearLayout>

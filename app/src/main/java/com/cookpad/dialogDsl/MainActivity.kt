@@ -28,6 +28,10 @@ class MainActivity : AppCompatActivity() {
             displayAlertDialog()
         }
 
+        buttonAlertDialogWithTitle.setOnClickListener {
+            displayAlertDialogWithTitle()
+        }
+
         buttonAlertDialogWithPositiveButtonCallback.setOnClickListener {
             displayAlertDialogWithPositiveButtonCallback()
         }
@@ -51,9 +55,25 @@ class MainActivity : AppCompatActivity() {
         buttonAlertDialogWithoutStringResources.setOnClickListener {
             displayAlertDialogWithoutStringResources()
         }
+
+        buttonNonCancelableAlertDialog.setOnClickListener {
+            displayNonCancelableDialog()
+        }
     }
 
     private fun displayAlertDialog() {
+        resetDialogResult()
+
+        showDialog {
+            messageResourceId = R.string.alert_dialog_message
+
+            positiveButton {
+                textResourceId = android.R.string.ok
+            }
+        }
+    }
+
+    private fun displayAlertDialogWithTitle() {
         resetDialogResult()
 
         showDialog {
@@ -210,11 +230,42 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun displayNonCancelableDialog() {
+        showDialog {
+            messageResourceId = R.string.alert_dialog_message
+
+            titleResourceId = R.string.alert_dialog_title
+
+            isCancelable = false
+
+            positiveButton {
+                textResourceId = android.R.string.ok
+                onClickListener = {
+                    updateResultDialog(MESSAGE_CLICKED_ON_POSITIVE_BUTTON)
+                }
+            }
+
+            negativeButton {
+                textResourceId = android.R.string.cancel
+                onClickListener = {
+                    updateResultDialog(MESSAGE_CLICKED_ON_NEGATIVE_BUTTON)
+                }
+            }
+
+            onCancelListener = {
+                updateResultDialog(MESSAGE_DIALOG_CANCELED)
+            }
+        }
+    }
+
+
     private fun updateResultDialog(resultText: String) {
         textViewDialogResult.text = resultText
     }
 
     private fun resetDialogResult() {
-        updateResultDialog("-")
+        updateResultDialog(
+            getString(R.string.empty)
+        )
     }
 }

@@ -3,14 +3,17 @@
     <string name="dialog_result">Dialog Result:</string>
     <string name="alert_dialog">Alert Dialog</string>
     <string name="alert_dialog_message">This is an Alert Dialog</string>
-    <string name="alert_dialog_with_positive_button_callback">This is an Alert dialog with OK callback</string>
-    <string name="alert_dialog_with_positive_and_negative_buttons_callbacks">This is an Alert dialog with Positive and
+    <string name="alert_dialog_with_positive_button_callback">Alert dialog with OK callback</string>
+    <string name="alert_dialog_with_positive_and_negative_buttons_callbacks">Alert dialog with Positive and
         Negative buttons callbacks.
     </string>
-    <string name="alert_dialog_with_dismiss_callback">This is an Alert dialog with dismiss callback.</string>
-    <string name="alert_dialog_with_cancel_callback">This is an Alert Dialog with cancel callback.</string>
-    <string name="custom_view_text">This is a custom view!</string>
+    <string name="alert_dialog_with_dismiss_callback">Alert dialog with dismiss callback.</string>
+    <string name="alert_dialog_with_cancel_callback">Alert Dialog with cancel callback.</string>
     <string name="alert_dialog_with_custom_view">Alert Dialog with custom view</string>
-    <string name="alert_dialog_without_string_resources">This is an Alert Dialog without String resources.</string>
+    <string name="alert_dialog_without_string_resources">Alert Dialog without String resources.</string>
     <string name="alert_dialog_title">AlertDialog Title</string>
+    <string name="custom_view_text">This is a custom view!</string>
+    <string name="alert_dialog_non_cancelable_dialog">Non cancelable Alert Dialog</string>
+    <string name="empty">-</string>
+    <string name="alert_dialog_with_title">Alert Dialog with title</string>
 </resources>

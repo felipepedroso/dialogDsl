@@ -13,7 +13,8 @@
         <item name="android:layout_marginEnd" tools:targetApi="jelly_bean_mr1">@dimen/sixteenDp</item>
         <item name="android:layout_marginRight">@dimen/sixteenDp</item>
         <item name="android:layout_marginLeft">@dimen/sixteenDp</item>
-        <item name="android:layout_marginTop">@dimen/eightDp</item>
+        <item name="android:layout_marginTop">@dimen/fourDp</item>
     </style>
 
+    <dimen name="fourDp">4dp</dimen>
 </resources>

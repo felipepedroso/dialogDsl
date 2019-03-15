@@ -15,7 +15,7 @@ class DialogButtonInitializer {
     var onClickListener: () -> Unit = { }
 }
 
-class CookpadDialogInitializer {
+class DialogInitializer {
     @StringRes
     var messageResourceId: Int? = null
 
@@ -48,9 +48,9 @@ class CookpadDialogInitializer {
 }
 
 fun Context.buildDialog(
-    initializeAction: CookpadDialogInitializer.() -> Unit
+    initializeAction: DialogInitializer.() -> Unit
 ): AlertDialog {
-    val initializer = CookpadDialogInitializer()
+    val initializer = DialogInitializer()
     initializeAction(initializer)
 
     return AlertDialog.Builder(this)
@@ -58,17 +58,17 @@ fun Context.buildDialog(
         .create()
 }
 
-fun Fragment.buildDialog(initializeAction: CookpadDialogInitializer.() -> Unit) =
+fun Fragment.buildDialog(initializeAction: DialogInitializer.() -> Unit) =
     this.context?.buildDialog(initializeAction)
 
-fun Context.showDialog(initializeAction: CookpadDialogInitializer.() -> Unit) =
+fun Context.showDialog(initializeAction: DialogInitializer.() -> Unit) =
     buildDialog(initializeAction).show()
 
-fun Fragment.showDialog(initializeAction: CookpadDialogInitializer.() -> Unit) =
+fun Fragment.showDialog(initializeAction: DialogInitializer.() -> Unit) =
     context?.showDialog(initializeAction)
 
 private fun AlertDialog.Builder.initialize(
-    initializer: CookpadDialogInitializer
+    initializer: DialogInitializer
 ): AlertDialog.Builder {
     with(initializer) {
         assertProperInitialization(this)
@@ -147,7 +147,7 @@ private fun AlertDialog.Builder.initializePositiveButton(
     }
 }
 
-private fun assertProperInitialization(initializer: CookpadDialogInitializer) {
+private fun assertProperInitialization(initializer: DialogInitializer) {
     with(initializer) {
         if (messageResourceId == null && messageText == null && customView == null) {
             throw MissingMessageDuringDialogInitialization()
