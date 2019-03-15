@@ -47,6 +47,10 @@ class MainActivity : AppCompatActivity() {
         buttonAlertDialogWithCustomView.setOnClickListener {
             displayAlertDialogWithCustomView()
         }
+
+        buttonAlertDialogWithoutStringResources.setOnClickListener {
+            displayAlertDialogWithoutStringResources()
+        }
     }
 
     private fun displayAlertDialog() {
@@ -54,6 +58,8 @@ class MainActivity : AppCompatActivity() {
 
         showDialog {
             messageResourceId = R.string.alert_dialog_message
+
+            titleResourceId = R.string.alert_dialog_title
 
             positiveButton {
                 textResourceId = android.R.string.ok
@@ -66,6 +72,8 @@ class MainActivity : AppCompatActivity() {
 
         showDialog {
             messageResourceId = R.string.alert_dialog_message
+
+            titleResourceId = R.string.alert_dialog_title
 
             positiveButton {
                 textResourceId = android.R.string.ok
@@ -81,6 +89,8 @@ class MainActivity : AppCompatActivity() {
 
         showDialog {
             messageResourceId = R.string.alert_dialog_message
+
+            titleResourceId = R.string.alert_dialog_title
 
             positiveButton {
                 textResourceId = android.R.string.ok
@@ -104,6 +114,8 @@ class MainActivity : AppCompatActivity() {
 
         showDialog {
             messageResourceId = R.string.alert_dialog_message
+
+            titleResourceId = R.string.alert_dialog_title
 
             positiveButton {
                 textResourceId = android.R.string.ok
@@ -131,6 +143,8 @@ class MainActivity : AppCompatActivity() {
         showDialog {
             messageResourceId = R.string.alert_dialog_message
 
+            titleResourceId = R.string.alert_dialog_title
+
             positiveButton {
                 textResourceId = android.R.string.ok
                 onClickListener = {
@@ -151,7 +165,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
     private fun displayAlertDialogWithCustomView() {
         resetDialogResult()
 
@@ -171,6 +184,30 @@ class MainActivity : AppCompatActivity() {
         }
 
         dialog.show()
+    }
+
+    private fun displayAlertDialogWithoutStringResources() {
+        val title = getString(R.string.alert_dialog_title)
+
+        val message = getString(R.string.alert_dialog_message)
+
+        val positiveButtonText = getText(android.R.string.ok)
+
+        val negativeButtonText = getText(android.R.string.cancel)
+
+        showDialog {
+            titleText = title
+
+            messageText = message
+
+            positiveButton {
+                text = positiveButtonText
+            }
+
+            negativeButton {
+                text = negativeButtonText
+            }
+        }
     }
 
     private fun updateResultDialog(resultText: String) {

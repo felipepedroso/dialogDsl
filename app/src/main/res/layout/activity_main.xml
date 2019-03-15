@@ -88,4 +88,14 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:text="@string/alert_dialog_with_custom_view"/>
 
+    <Button
+            android:id="@+id/buttonAlertDialogWithoutStringResources"
+            style="@style/ButtonAlert"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/buttonAlertDialogWithCustomView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@string/alert_dialog_without_string_resources"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

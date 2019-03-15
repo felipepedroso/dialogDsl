@@ -10,7 +10,7 @@ class DialogButtonInitializer {
     @StringRes
     var textResourceId: Int? = null
 
-    var text: String? = null
+    var text: CharSequence? = null
 
     var onClickListener: () -> Unit = { }
 }
@@ -19,12 +19,12 @@ class CookpadDialogInitializer {
     @StringRes
     var messageResourceId: Int? = null
 
-    var messageText: String? = null
+    var messageText: CharSequence? = null
 
     @StringRes
     var titleResourceId: Int? = null
 
-    var titleText: String? = null
+    var titleText: CharSequence? = null
 
     var isCancelable: Boolean = true
 

@@ -11,4 +11,6 @@
     <string name="alert_dialog_with_cancel_callback">This is an Alert Dialog with cancel callback.</string>
     <string name="custom_view_text">This is a custom view!</string>
     <string name="alert_dialog_with_custom_view">Alert Dialog with custom view</string>
+    <string name="alert_dialog_without_string_resources">This is an Alert Dialog without String resources.</string>
+    <string name="alert_dialog_title">AlertDialog Title</string>
 </resources>
